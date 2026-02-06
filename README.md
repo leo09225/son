@@ -1,32 +1,3 @@
----
-
-## 🎼 Presets sonores
-
-Le synthétiseur propose **4 presets de type “piano”**, inspirés des synthétiseurs modernes :
-
-1. **Piano sinusoïdal pur**  
-   - Sinusoïde unique  
-   - Son clair et minimal  
-
-2. **Piano additif**  
-   - Fondamentale + harmoniques  
-   - Timbre plus riche  
-
-3. **Piano électrique**  
-   - Attaque rapide  
-   - Decay court  
-   - Son percussif  
-
-4. **Piano doux / Pad**  
-   - Attaque progressive  
-   - Release long  
-   - Ajout d’un echo léger  
-
-Les presets peuvent être changés **sans reprogrammer la carte**, via :
-- des messages MIDI *Program Change*,
-- des boutons physiques sur le Teensy.
-
----
 
 ## 🎹 Clavier et polyphonie
 
