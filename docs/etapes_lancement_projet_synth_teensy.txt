@@ -1,0 +1,166 @@
+ETAPES POUR LANCER ET TESTER LE PROJET SYNTHETISEUR TEENSY
+====================================================
+
+Ce document décrit PAS A PAS comment lancer le projet,
+compiler le code et vérifier que le synthétiseur fonctionne.
+
+----------------------------------------------------
+PRE-REQUIS
+----------------------------------------------------
+
+Matériel :
+- Teensy 4.0
+- Teensy Audio Shield
+- Casque ou enceintes branchées sur la sortie jack
+- Câble USB (PC <-> Teensy)
+
+Logiciel :
+- Arduino IDE installé
+- Teensyduino installé
+- FAUST installé sur le PC
+- Clavier MIDI virtuel (ex: VMPK)
+
+----------------------------------------------------
+ETAPE 1 : PREPARER L’ARBORESCENCE
+----------------------------------------------------
+
+Créer un dossier de projet, par exemple :
+taiko-synth/
+
+Vérifier la présence des dossiers :
+- faust/
+- teensy/taiko_synth/
+- tools/
+
+Dans Arduino IDE, le dossier :
+teensy/taiko_synth/
+doit contenir :
+- taiko_synth.ino
+- MyDsp.h / MyDsp.cpp
+- MidiRouter.h / MidiRouter.cpp
+- TaikoSynth.h (généré)
+
+----------------------------------------------------
+ETAPE 2 : GENERER LE C++ FAUST
+----------------------------------------------------
+
+Dans le dossier racine du projet, ouvrir un terminal.
+
+Lancer la commande :
+faust -i -a faust/architectures/faustMinimal.h faust/TaikoSynth.dsp -o faust/build/TaikoSynth.h
+
+Vérifier :
+- le fichier TaikoSynth.h est bien généré
+- aucune erreur FAUST
+
+Copier le fichier :
+faust/build/TaikoSynth.h
+dans :
+teensy/taiko_synth/
+
+----------------------------------------------------
+ETAPE 3 : CONFIGURER ARDUINO IDE
+----------------------------------------------------
+
+Ouvrir Arduino IDE.
+
+Ouvrir le fichier :
+teensy/taiko_synth/taiko_synth.ino
+
+Dans le menu Tools :
+
+- Board       -> Teensy 4.0
+- USB Type    -> MIDI + Serial
+- CPU Speed   -> 600 MHz
+- Port        -> (le port Teensy)
+
+----------------------------------------------------
+ETAPE 4 : CABLAGE ET AUDIO
+----------------------------------------------------
+
+- Empiler la Teensy sur l’Audio Shield
+- Brancher un casque sur la sortie jack de l’Audio Shield
+- Brancher la Teensy au PC via USB
+
+----------------------------------------------------
+ETAPE 5 : COMPILATION ET UPLOAD
+----------------------------------------------------
+
+Cliquer sur :
+- Verify (✓) pour compiler
+- Upload (→) pour flasher la Teensy
+
+Attendre :
+- Compilation OK
+- Upload terminé
+
+----------------------------------------------------
+ETAPE 6 : LANCER LE CLAVIER MIDI VIRTUEL
+----------------------------------------------------
+
+Lancer VMPK (ou équivalent).
+
+Dans VMPK :
+- Edit -> MIDI Connections
+- Output port -> Teensy MIDI
+
+IMPORTANT :
+- Si tu reprogrammes la Teensy, relancer VMPK
+
+----------------------------------------------------
+ETAPE 7 : TEST DU SYNTHETISEUR
+----------------------------------------------------
+
+Appuyer sur des touches du clavier MIDI.
+
+Comportement attendu :
+- Note jouée = son qui sort du Teensy
+- Relâcher la touche = arrêt du son
+- Vélocité = volume du son
+
+Si rien ne sort :
+- vérifier le volume audioShield.volume(0.5)
+- vérifier USB Type = MIDI + Serial
+- vérifier sortie casque
+
+----------------------------------------------------
+ETAPE 8 : DEBUG DE BASE
+----------------------------------------------------
+
+En cas de problème :
+
+1) Pas de son :
+- casque branché au bon endroit
+- AudioMemory(12) suffisant
+- vérifier que ta carte est bien Teensy 4.0
+
+2) MIDI non détecté :
+- usbMIDI.read() appelé dans loop()
+- VMPK bien connecté à Teensy MIDI
+
+3) Compilation impossible :
+- vérifier présence de TaikoSynth.h
+- vérifier FAUST installé correctement
+
+----------------------------------------------------
+ETAPE 9 : ETAT FINAL ATTENDU
+----------------------------------------------------
+
+Si tout est correct :
+- le clavier PC contrôle le synthé
+- le DSP est calculé sur la Teensy
+- le son sort de l’Audio Shield
+
+Tu as un SYNTHETISEUR FONCTIONNEL.
+
+----------------------------------------------------
+ETAPES SUIVANTES POSSIBLES
+----------------------------------------------------
+
+- Ajouter polyphonie
+- Changer l’oscillateur
+- Ajouter filtre / distortion
+- Mapper clavier PC façon GarageBand
+- Ajouter potards et boutons
+
+====================================================
