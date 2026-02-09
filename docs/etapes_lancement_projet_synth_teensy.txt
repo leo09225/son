@@ -1,166 +1,95 @@
-ETAPES POUR LANCER ET TESTER LE PROJET SYNTHETISEUR TEENSY
-====================================================
+MODE D’EMPLOI — LANCER LE PROJET TAIKO SYNTH (FULL C++)
 
-Ce document décrit PAS A PAS comment lancer le projet,
-compiler le code et vérifier que le synthétiseur fonctionne.
+ARCHITECTURE DU PROJET
+- SON/
+  - teensy/taiko_synth/        -> code embarqué Teensy (Arduino)
+    - taiko_synth.ino
+    - MyDsp.h / MyDsp.cpp
+    - MidiRouter.h / MidiRouter.cpp
+    - config.h
+  - tools/keyboard_to_midi_cpp/ -> outil PC (clavier AZERTY -> MIDI)
+    - main.cpp
+    - CMakeLists.txt
+    - build/
+  - docs/                       -> documentation
 
-----------------------------------------------------
-PRE-REQUIS
-----------------------------------------------------
+----------------------------------------------------------------
+A) CÔTÉ TEENSY — COMPILER ET FLASHER
+----------------------------------------------------------------
 
-Matériel :
-- Teensy 4.0
-- Teensy Audio Shield
-- Casque ou enceintes branchées sur la sortie jack
-- Câble USB (PC <-> Teensy)
+1) Ouvrir Arduino IDE
+2) Ouvrir le fichier :
+   SON/teensy/taiko_synth/taiko_synth.ino
 
-Logiciel :
-- Arduino IDE installé
-- Teensyduino installé
-- FAUST installé sur le PC
-- Clavier MIDI virtuel (ex: VMPK)
+3) Configurer Arduino :
+   - Tools -> Board -> Teensy 4.0
+   - Tools -> USB Type -> MIDI + Serial
+   - Tools -> Audio -> Audio Shield (si présent)
 
-----------------------------------------------------
-ETAPE 1 : PREPARER L’ARBORESCENCE
-----------------------------------------------------
+4) Brancher la Teensy en USB
+5) Cliquer sur Upload
 
-Créer un dossier de projet, par exemple :
-taiko-synth/
+=> La Teensy est maintenant prête à recevoir du MIDI et produire du son
+=> Brancher un casque sur la sortie jack de l’Audio Shield
 
-Vérifier la présence des dossiers :
-- faust/
-- teensy/taiko_synth/
-- tools/
+----------------------------------------------------------------
+B) CÔTÉ PC — COMPILER L’OUTIL CLAVIER (UNE SEULE FOIS)
+----------------------------------------------------------------
 
-Dans Arduino IDE, le dossier :
-teensy/taiko_synth/
-doit contenir :
-- taiko_synth.ino
-- MyDsp.h / MyDsp.cpp
-- MidiRouter.h / MidiRouter.cpp
-- TaikoSynth.h (généré)
+Ouvrir un terminal à la racine du projet SON/ :
 
-----------------------------------------------------
-ETAPE 2 : GENERER LE C++ FAUST
-----------------------------------------------------
+cd tools/keyboard_to_midi_cpp
+mkdir -p build
+cd build
+cmake ..
+make
 
-Dans le dossier racine du projet, ouvrir un terminal.
+=> Un exécutable est généré :
+   tools/keyboard_to_midi_cpp/build/keyboard_to_midi
 
-Lancer la commande :
-faust -i -a faust/architectures/faustMinimal.h faust/TaikoSynth.dsp -o faust/build/TaikoSynth.h
+----------------------------------------------------------------
+C) LANCER LE CLAVIER VIRTUEL (À CHAQUE SESSION)
+----------------------------------------------------------------
 
-Vérifier :
-- le fichier TaikoSynth.h est bien généré
-- aucune erreur FAUST
+Dans le même dossier :
 
-Copier le fichier :
-faust/build/TaikoSynth.h
-dans :
-teensy/taiko_synth/
+cd tools/keyboard_to_midi_cpp/build
+./keyboard_to_midi
 
-----------------------------------------------------
-ETAPE 3 : CONFIGURER ARDUINO IDE
-----------------------------------------------------
+Une fenêtre s’ouvre.
+IMPORTANT : cliquer dans la fenêtre pour capter le clavier.
 
-Ouvrir Arduino IDE.
+----------------------------------------------------------------
+D) MAPPING CLAVIER (TYPE GARAGEBAND — AZERTY)
+----------------------------------------------------------------
 
-Ouvrir le fichier :
-teensy/taiko_synth/taiko_synth.ino
+Touches blanches :
+Q  S  D  F  G  H  J
 
-Dans le menu Tools :
+Touches noires :
+Z  E     T  Y  U
 
-- Board       -> Teensy 4.0
-- USB Type    -> MIDI + Serial
-- CPU Speed   -> 600 MHz
-- Port        -> (le port Teensy)
+Quitter :
+ESC
 
-----------------------------------------------------
-ETAPE 4 : CABLAGE ET AUDIO
-----------------------------------------------------
+----------------------------------------------------------------
+E) CHECKLIST SI AUCUN SON
+----------------------------------------------------------------
 
-- Empiler la Teensy sur l’Audio Shield
-- Brancher un casque sur la sortie jack de l’Audio Shield
-- Brancher la Teensy au PC via USB
+- Teensy flashée avec USB Type = MIDI + Serial ?
+- Le programme ./keyboard_to_midi affiche un port contenant "Teensy" ?
+- La fenêtre SDL est bien sélectionnée (cliquée) ?
+- Volume Audio Shield non nul (audioShield.volume(0.5)) ?
+- Casque branché sur la sortie jack de l’Audio Shield ?
 
-----------------------------------------------------
-ETAPE 5 : COMPILATION ET UPLOAD
-----------------------------------------------------
+----------------------------------------------------------------
+F) NETTOYAGE (OPTIONNEL)
+----------------------------------------------------------------
 
-Cliquer sur :
-- Verify (✓) pour compiler
-- Upload (→) pour flasher la Teensy
+Si le projet est FULL C++ (sans Faust) :
+- Supprimer gen_faust.sh / gen_faust.ps1
+- Supprimer tout dossier faust/ restant
+- Aucune inclusion MapUI / Faust dans le code Teensy
 
-Attendre :
-- Compilation OK
-- Upload terminé
-
-----------------------------------------------------
-ETAPE 6 : LANCER LE CLAVIER MIDI VIRTUEL
-----------------------------------------------------
-
-Lancer VMPK (ou équivalent).
-
-Dans VMPK :
-- Edit -> MIDI Connections
-- Output port -> Teensy MIDI
-
-IMPORTANT :
-- Si tu reprogrammes la Teensy, relancer VMPK
-
-----------------------------------------------------
-ETAPE 7 : TEST DU SYNTHETISEUR
-----------------------------------------------------
-
-Appuyer sur des touches du clavier MIDI.
-
-Comportement attendu :
-- Note jouée = son qui sort du Teensy
-- Relâcher la touche = arrêt du son
-- Vélocité = volume du son
-
-Si rien ne sort :
-- vérifier le volume audioShield.volume(0.5)
-- vérifier USB Type = MIDI + Serial
-- vérifier sortie casque
-
-----------------------------------------------------
-ETAPE 8 : DEBUG DE BASE
-----------------------------------------------------
-
-En cas de problème :
-
-1) Pas de son :
-- casque branché au bon endroit
-- AudioMemory(12) suffisant
-- vérifier que ta carte est bien Teensy 4.0
-
-2) MIDI non détecté :
-- usbMIDI.read() appelé dans loop()
-- VMPK bien connecté à Teensy MIDI
-
-3) Compilation impossible :
-- vérifier présence de TaikoSynth.h
-- vérifier FAUST installé correctement
-
-----------------------------------------------------
-ETAPE 9 : ETAT FINAL ATTENDU
-----------------------------------------------------
-
-Si tout est correct :
-- le clavier PC contrôle le synthé
-- le DSP est calculé sur la Teensy
-- le son sort de l’Audio Shield
-
-Tu as un SYNTHETISEUR FONCTIONNEL.
-
-----------------------------------------------------
-ETAPES SUIVANTES POSSIBLES
-----------------------------------------------------
-
-- Ajouter polyphonie
-- Changer l’oscillateur
-- Ajouter filtre / distortion
-- Mapper clavier PC façon GarageBand
-- Ajouter potards et boutons
-
-====================================================
+----------------------------------------------------------------
+FIN DU MODE D’EMPLOI

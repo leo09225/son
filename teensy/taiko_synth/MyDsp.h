@@ -1,11 +1,13 @@
 #pragma once
 
 #include <Audio.h>
+#include <Arduino.h>
 #include "config.h"
 
-// Le header généré par Faust (copié dans ce dossier)
-#include "TaikoSynth.h"
-#include "faust/gui/MapUI.h"
+// =======================================================
+// MyDsp (FULL C++) : poly synth + ADSR + echo global
+// API identique pour MidiRouter : noteOn/noteOff + setters
+// =======================================================
 
 class MyDsp : public AudioStream {
 public:
@@ -27,33 +29,78 @@ public:
   void setEchoMs(float ms);         // 30..800
 
 private:
-  struct Voice {
-    dsp*   dspObj = nullptr;
-    MapUI* ui     = nullptr;
-    float* outL   = nullptr;
-    float* outR   = nullptr;
+  // ---------- Synth helpers ----------
+  static float midiToFreq(int note);
 
-    bool   active = false;
-    uint8_t note  = 0;
-    uint32_t age  = 0;   // pour voice stealing
+  // Simple shared sine table
+  static constexpr int   kSineSize = 2048;
+  static float           sSineTable[kSineSize];
+  static bool            sSineInit;
+  static void            initSineTable();
+
+  // ✅ FIX: méthode membre (peut accéder aux private)
+  float sineFromPhase(float phase01) const;
+
+  // One pole LP for pad preset (per voice)
+  struct OnePoleLP {
+    float z = 0.0f;
+    float a = 0.2f; // 0..1 (plus petit = plus filtré)
+    inline float tick(float x) { z += a * (x - z); return z; }
+  };
+
+  enum EnvStage : uint8_t { OFF, ATTACK, DECAY, SUSTAIN, RELEASE };
+
+  struct Voice {
+    bool active = false;
+    uint8_t note = 0;
+    uint32_t age = 0;
+
+    // Osc phase in [0,1)
+    float phase = 0.0f;
+
+    // Envelope
+    EnvStage stage = OFF;
+    float env = 0.0f;     // current envelope [0..1]
+    float vel = 0.0f;     // velocity gain [0..1]
+
+    // Extra for transient (preset 2)
+    float transient = 0.0f;
+
+    // Pad filter (preset 3)
+    OnePoleLP lp;
   };
 
   Voice voices[kVoices];
   uint32_t ageCounter = 1;
 
-  // Paramètres globaux (appliqués à toutes les voix)
+  int findFreeVoice() const;
+  int stealVoice() const;
+
+  // ---------- Global params ----------
   int   preset = 0;
   float masterGain = 0.35f;
+
   bool  echoOn = false;
   float echoMix = 0.25f;
   float echoFb  = 0.45f;
   float echoMs  = 280.0f;
 
-  // Helpers
-  int findFreeVoice() const;
-  int stealVoice() const;
-  void applyGlobals(Voice& v);
-  void setVoiceParam(Voice& v, const char* path, float val);
+  // ADSR constants (tu pourras les rendre contrôlables plus tard)
+  float atkS = 0.01f;
+  float decS = 0.10f;
+  float susL = 0.70f;
+  float relS = 0.20f;
 
-  static float midiToFreq(int note);
+  // ---------- Echo (global) ----------
+  static constexpr int kMaxEchoSamples = 36000; // ~0.816s @44.1kHz
+  float* echoBuf = nullptr;
+  int    echoLen = 12000;  // delay in samples (set from echoMs)
+  int    echoIdx = 0;
+
+  void   updateEchoLen();
+  float  processEcho(float x);
+
+  // ---------- utils ----------
+  static inline float softClip(float x) { return tanhf(x); }
+  static inline float fastRand01(); // [0..1]
 };
