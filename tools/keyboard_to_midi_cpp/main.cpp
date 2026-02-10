@@ -178,12 +178,12 @@ int main() {
                     }
 
                     // --- Echo mix : [ / ] (CC91) ---
-                    if (e.key.keysym.sym == SDLK_LEFTBRACKET) {
+                    if (e.key.keysym.sym == SDLK_b) {
                         echoMix = std::max(0, echoMix - 5);
                         sendCC(midi, 91, echoMix);
                         break;
                     }
-                    if (e.key.keysym.sym == SDLK_RIGHTBRACKET) {
+                    if (e.key.keysym.sym == SDLK_n) {
                         echoMix = std::min(127, echoMix + 5);
                         sendCC(midi, 91, echoMix);
                         break;
