@@ -931,6 +931,7 @@ CMakeFiles/keyboard_to_midi.dir/main.cpp.o: /Users/victorchachereau/Documents/Gi
   /usr/local/include/SDL2/SDL_thread.h \
   /usr/local/include/SDL2/SDL_timer.h \
   /usr/local/include/SDL2/SDL_touch.h \
+  /usr/local/include/SDL2/SDL_ttf.h \
   /usr/local/include/SDL2/SDL_version.h \
   /usr/local/include/SDL2/SDL_video.h \
   /usr/local/include/SDL2/begin_code.h \
@@ -2526,6 +2527,8 @@ CMakeFiles/keyboard_to_midi.dir/main.cpp.o: /Users/victorchachereau/Documents/Gi
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__bit/bit_log2.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_ctype.h:
+
+/usr/local/include/SDL2/SDL_ttf.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/comp.h:
 

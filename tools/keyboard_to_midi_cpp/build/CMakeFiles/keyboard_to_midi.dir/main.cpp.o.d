@@ -929,5 +929,5 @@ CMakeFiles/keyboard_to_midi.dir/main.cpp.o: \
   /usr/local/include/SDL2/SDL_timer.h \
   /usr/local/include/SDL2/SDL_version.h \
   /usr/local/include/SDL2/SDL_locale.h \
-  /usr/local/include/SDL2/SDL_misc.h \
+  /usr/local/include/SDL2/SDL_misc.h /usr/local/include/SDL2/SDL_ttf.h \
   /usr/local/Cellar/rtmidi/6.0.0/include/rtmidi/RtMidi.h
