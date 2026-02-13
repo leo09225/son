@@ -152,6 +152,17 @@ float MyDsp::processEcho(float x) {
   return y;
 }
 
+void MyDsp::allNotesOff() {
+  for (int i = 0; i < kVoices; i++) {
+    if (voices[i].active) {
+      voices[i].stage = OFF;
+      voices[i].env = 0.0f;
+      voices[i].active = false;
+    }
+  }
+}
+
+
 void MyDsp::update(void) {
   // mix mono (stéréo identique)
   audio_block_t* outBlock[AUDIO_OUTPUTS];

@@ -27,6 +27,7 @@ public:
   void setEchoMix(float mix);       // 0..1
   void setEchoFb(float fb);         // 0..0.85
   void setEchoMs(float ms);         // 30..800
+  void allNotesOff();
 
 private:
   // ---------- Synth helpers ----------
