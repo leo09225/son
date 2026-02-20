@@ -17,6 +17,12 @@ target_include_directories(keyboard_to_midi PRIVATE
   ${RTMIDI_INCLUDE_DIRS}
 )
 
+target_link_directories(keyboard_to_midi PRIVATE
+  ${SDL2_LIBRARY_DIRS}
+  ${SDL2_TTF_LIBRARY_DIRS}
+  ${RTMIDI_LIBRARY_DIRS}
+)
+
 target_link_libraries(keyboard_to_midi PRIVATE
   ${SDL2_LIBRARIES}
   ${SDL2_TTF_LIBRARIES}

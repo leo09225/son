@@ -1,0 +1,1 @@
+/usr/bin/c++ -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/keyboard_to_midi.dir/main.cpp.o -o keyboard_to_midi  -lSDL2 -lSDL2_ttf -lSDL2 -lrtmidi -lSDL2_ttf -lrtmidi

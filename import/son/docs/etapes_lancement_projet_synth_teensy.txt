@@ -1,0 +1,95 @@
+MODE D’EMPLOI — LANCER LE PROJET TAIKO SYNTH (FULL C++)
+
+ARCHITECTURE DU PROJET
+- SON/
+  - teensy/taiko_synth/        -> code embarqué Teensy (Arduino)
+    - taiko_synth.ino
+    - MyDsp.h / MyDsp.cpp
+    - MidiRouter.h / MidiRouter.cpp
+    - config.h
+  - tools/keyboard_to_midi_cpp/ -> outil PC (clavier AZERTY -> MIDI)
+    - main.cpp
+    - CMakeLists.txt
+    - build/
+  - docs/                       -> documentation
+
+----------------------------------------------------------------
+A) CÔTÉ TEENSY — COMPILER ET FLASHER
+----------------------------------------------------------------
+
+1) Ouvrir Arduino IDE
+2) Ouvrir le fichier :
+   SON/teensy/taiko_synth/taiko_synth.ino
+
+3) Configurer Arduino :
+   - Tools -> Board -> Teensy 4.0
+   - Tools -> USB Type -> MIDI + Serial
+   - Tools -> Audio -> Audio Shield (si présent)
+
+4) Brancher la Teensy en USB
+5) Cliquer sur Upload
+
+=> La Teensy est maintenant prête à recevoir du MIDI et produire du son
+=> Brancher un casque sur la sortie jack de l’Audio Shield
+
+----------------------------------------------------------------
+B) CÔTÉ PC — COMPILER L’OUTIL CLAVIER (UNE SEULE FOIS)
+----------------------------------------------------------------
+
+Ouvrir un terminal à la racine du projet SON/ :
+
+cd tools/keyboard_to_midi_cpp
+mkdir -p build
+cd build
+cmake ..
+make
+
+=> Un exécutable est généré :
+   tools/keyboard_to_midi_cpp/build/keyboard_to_midi
+
+----------------------------------------------------------------
+C) LANCER LE CLAVIER VIRTUEL (À CHAQUE SESSION)
+----------------------------------------------------------------
+
+Dans le même dossier :
+
+cd tools/keyboard_to_midi_cpp/build
+./keyboard_to_midi
+
+Une fenêtre s’ouvre.
+IMPORTANT : cliquer dans la fenêtre pour capter le clavier.
+
+----------------------------------------------------------------
+D) MAPPING CLAVIER (TYPE GARAGEBAND — AZERTY)
+----------------------------------------------------------------
+
+Touches blanches :
+Q  S  D  F  G  H  J
+
+Touches noires :
+Z  E     T  Y  U
+
+Quitter :
+ESC
+
+----------------------------------------------------------------
+E) CHECKLIST SI AUCUN SON
+----------------------------------------------------------------
+
+- Teensy flashée avec USB Type = MIDI + Serial ?
+- Le programme ./keyboard_to_midi affiche un port contenant "Teensy" ?
+- La fenêtre SDL est bien sélectionnée (cliquée) ?
+- Volume Audio Shield non nul (audioShield.volume(0.5)) ?
+- Casque branché sur la sortie jack de l’Audio Shield ?
+
+----------------------------------------------------------------
+F) NETTOYAGE (OPTIONNEL)
+----------------------------------------------------------------
+
+Si le projet est FULL C++ (sans Faust) :
+- Supprimer gen_faust.sh / gen_faust.ps1
+- Supprimer tout dossier faust/ restant
+- Aucune inclusion MapUI / Faust dans le code Teensy
+
+----------------------------------------------------------------
+FIN DU MODE D’EMPLOI

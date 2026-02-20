@@ -1,0 +1,3 @@
+/Users/victorchachereau/Documents/GitHub/son/tools/keyboard_to_midi_cpp/build/CMakeFiles/keyboard_to_midi.dir
+/Users/victorchachereau/Documents/GitHub/son/tools/keyboard_to_midi_cpp/build/CMakeFiles/edit_cache.dir
+/Users/victorchachereau/Documents/GitHub/son/tools/keyboard_to_midi_cpp/build/CMakeFiles/rebuild_cache.dir

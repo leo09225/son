@@ -7,19 +7,10 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 
-# --- chemins projet (adapte si besoin) ---
-SKETCH_DIR = ROOT / "teensy" / "taiko_synth"
-SKETCH_INO = SKETCH_DIR / "taiko_synth.ino"
-
+# --- chemins projet ---
 TOOL_DIR = ROOT / "tools" / "keyboard_to_midi_cpp"
 TOOL_BUILD = TOOL_DIR / "build"
 TOOL_BIN = TOOL_BUILD / "keyboard_to_midi"
-
-# Teensy 4.0
-FQBN = "teensy:avr:teensy40"
-
-# USB Type côté Teensy (le bon choix pour avoir un port /dev/cu.usbmodem*)
-USBTYPE = "USB_MIDI_SERIAL"
 
 
 def run(cmd, cwd=None):
@@ -50,7 +41,6 @@ def detect_port():
 
 
 def main():
-    ensure_exists(SKETCH_INO, "Sketch Arduino (.ino)")
     ensure_exists(TOOL_DIR, "Dossier tool clavier")
 
     # 0) détecter port
@@ -59,25 +49,21 @@ def main():
         print("❌ Aucun port USB détecté.")
         print("👉 Vérifie :")
         print("   - Teensy branchée avec un câble DATA (pas charge-only)")
-        print("   - Arduino IDE : Tools -> USB Type = MIDI + Serial")
         print("   - puis rebranche la Teensy")
         print("\n(Ports attendus: /dev/cu.usbmodem* ou /dev/cu.usbserial*)")
         sys.exit(1)
 
     print(f"✅ Port détecté: {port}")
 
-    # 1) Upload Teensy via arduino-cli
-    print("\n=== 1) Upload Teensy (arduino-cli) ===")
+    # 1) Upload Teensy via PlatformIO
+    print("\n=== 1) Upload Teensy (PlatformIO) ===")
     print("⚠️ Si l’upload attend le mode program, appuie sur le bouton de la Teensy.")
 
     run([
-        "arduino-cli", "compile",
-        "--fqbn", FQBN,
-        "--build-property", f"build.usbtype={USBTYPE}",
-        "--upload",
-        "-p", port,
-        str(SKETCH_DIR),
-    ])
+        "platformio", "run",
+        "--target", "upload",
+        "--upload-port", port,
+    ], cwd=ROOT)
 
     # 2) Build tool clavier (CMake)
     print("\n=== 2) Build tool clavier (CMake) ===")

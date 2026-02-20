@@ -1,0 +1,142 @@
+PROJET SYNTHETISEUR TEENSY – ORGANISATION GENERALE
+===========================================
+
+Objectif
+--------
+Créer un synthétiseur contrôlé par le clavier du PC (type GarageBand),
+où :
+- le clavier PC agit comme un clavier de piano (1 octave ou plus),
+- les notes sont envoyées en MIDI,
+- le son est calculé et SORT du Teensy (Audio Shield).
+
+Architecture globale
+--------------------
+PC (clavier -> MIDI USB)
+        |
+        v
+Teensy 4.0
+- Réception MIDI
+- DSP audio (FAUST)
+- Sortie audio (Audio Shield)
+
+Découpage logique du projet
+---------------------------
+Le projet est séparé en 3 grandes parties :
+1. DSP (FAUST)
+2. Intégration Teensy (C++)
+3. Outils PC / MIDI
+
+Arborescence recommandée
+-----------------------
+taiko-synth/
+├─ README.md
+├─ docs/
+│  ├─ wiring.md                  # Câblage (potards/boutons si besoin)
+│  └─ mapping.md                 # Mapping clavier -> notes -> paramètres
+├─ faust/
+│  ├─ TaikoSynth.dsp             # DSP FAUST principal
+│  ├─ architectures/
+│  │  └─ faustMinimal.h          # Architecture FAUST minimale
+│  └─ build/
+│     └─ TaikoSynth.h            # C++ généré par FAUST (AUTO)
+├─ teensy/
+│  └─ taiko_synth/
+│     ├─ taiko_synth.ino         # Sketch principal Arduino
+│     ├─ MyDsp.h                 # Wrapper FAUST <-> Teensy
+│     ├─ MyDsp.cpp
+│     ├─ MidiRouter.h            # Gestion MIDI
+│     ├─ MidiRouter.cpp
+│     └─ config.h                # Constantes globales
+└─ tools/
+   ├─ gen_faust.sh               # Script FAUST -> C++ (Linux/Mac)
+   ├─ gen_faust.ps1              # Script FAUST -> C++ (Windows)
+   └─ keyboard_to_midi/          # Optionnel : mapping clavier PC
+
+Responsabilités par fichier
+---------------------------
+
+FAUST (faust/TaikoSynth.dsp)
+- Définit le synthétiseur :
+  - oscillateur(s)
+  - enveloppe
+  - filtre
+  - saturation / effets
+- Expose des paramètres :
+  - freq
+  - gate
+  - gain
+  - cutoff, attack, release, etc.
+
+FAUST généré (faust/build/TaikoSynth.h)
+- Généré automatiquement par FAUST
+- Ne JAMAIS modifier à la main
+
+Commande de génération :
+faust -i -a faust/architectures/faustMinimal.h faust/TaikoSynth.dsp -o faust/build/TaikoSynth.h
+
+MyDsp.(h/cpp)
+- Interface entre Teensy et FAUST
+- Initialise le DSP FAUST
+- Appelle compute() dans update()
+- Convertit float -> int16
+- Envoie les buffers via I2S
+- Fournit des setters propres :
+  - setFreq(float)
+  - setGate(bool)
+  - setGain(float)
+  - etc.
+
+MidiRouter.(h/cpp)
+- Lit le MIDI USB (usbMIDI)
+- Gère NoteOn / NoteOff
+- Convertit :
+  - note MIDI -> fréquence (440 * 2^((n-69)/12))
+  - vélocité -> gain / enveloppe
+- Décide du comportement :
+  - mono (au début)
+  - polyphonique (plus tard)
+
+taiko_synth.ino
+----------------
+- Initialise Audio + SGTL5000
+- Configure USB en MIDI + Serial
+- Appelle MidiRouter.update() dans loop()
+- Lit éventuellement potards/boutons
+
+Organisation côté PC
+--------------------
+Solution simple :
+- Utiliser un clavier MIDI virtuel (VMPK, etc.)
+- Mapper le clavier PC -> MIDI
+- Envoyer MIDI via USB vers la Teensy
+
+Configuration Arduino :
+Tools -> USB Type -> MIDI + Serial
+
+Objectif MVP (Minimum Viable Product)
+-------------------------------------
+Étape 1 :
+- Synthé mono
+- NoteOn :
+  - setFreq()
+  - setGate(1)
+  - setGain(vélocité)
+- NoteOff :
+  - setGate(0)
+- Son propre (enveloppe + smoothing)
+
+Étapes suivantes :
+- Polyphonie
+- Presets
+- Effets (flanger, delay, distortion)
+- Potards/boutons
+- MIDI CC
+
+Conclusion
+----------
+Cette architecture :
+- est réaliste pour le Teensy
+- est scalable pour un projet final
+- sépare clairement DSP / contrôle / hardware
+- est parfaitement adaptée à FAUST + MIDI
+

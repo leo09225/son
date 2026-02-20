@@ -20,11 +20,14 @@ events:
     names:
       - "uname"
     candidate_directories:
+      - "/Users/victorchachereau/.platformio/penv/bin/"
       - "/usr/local/bin/"
       - "/usr/local/opt/coreutils/libexec/gnubin/"
       - "/Users/victorchachereau/anaconda3/bin/"
       - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/"
+      - "/opt/local/bin/"
+      - "/opt/local/sbin/"
       - "/System/Cryptexes/App/usr/bin/"
       - "/usr/bin/"
       - "/bin/"
@@ -34,15 +37,19 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
     searched_directories:
+      - "/Users/victorchachereau/.platformio/penv/bin/uname"
       - "/usr/local/bin/uname"
     found: "/usr/local/opt/coreutils/libexec/gnubin/uname"
     search_context:
       ENV{PATH}:
+        - "/Users/victorchachereau/.platformio/penv/bin"
         - "/usr/local/bin"
         - "/usr/local/opt/coreutils/libexec/gnubin"
         - "/Users/victorchachereau/anaconda3/bin"
         - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
         - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/opt/local/bin"
+        - "/opt/local/sbin"
         - "/usr/local/bin"
         - "/System/Cryptexes/App/usr/bin"
         - "/usr/bin"
@@ -56,6 +63,8 @@ events:
         - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
         - "/usr/local/opt/coreutils/libexec/gnubin"
         - "/Users/victorchachereau/anaconda3/bin"
+        - "/opt/local/bin"
+        - "/opt/local/sbin"
   -
     kind: "message-v1"
     backtrace:
@@ -84,11 +93,14 @@ events:
       - "make"
       - "smake"
     candidate_directories:
+      - "/Users/victorchachereau/.platformio/penv/bin/"
       - "/usr/local/bin/"
       - "/usr/local/opt/coreutils/libexec/gnubin/"
       - "/Users/victorchachereau/anaconda3/bin/"
       - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/"
+      - "/opt/local/bin/"
+      - "/opt/local/sbin/"
       - "/System/Cryptexes/App/usr/bin/"
       - "/usr/bin/"
       - "/bin/"
@@ -98,11 +110,14 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
     searched_directories:
+      - "/Users/victorchachereau/.platformio/penv/bin/gmake"
       - "/usr/local/bin/gmake"
       - "/usr/local/opt/coreutils/libexec/gnubin/gmake"
       - "/Users/victorchachereau/anaconda3/bin/gmake"
       - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/gmake"
       - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/gmake"
+      - "/opt/local/bin/gmake"
+      - "/opt/local/sbin/gmake"
       - "/System/Cryptexes/App/usr/bin/gmake"
       - "/usr/bin/gmake"
       - "/bin/gmake"
@@ -111,20 +126,26 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/gmake"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/gmake"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/gmake"
+      - "/Users/victorchachereau/.platformio/penv/bin/make"
       - "/usr/local/bin/make"
       - "/usr/local/opt/coreutils/libexec/gnubin/make"
       - "/Users/victorchachereau/anaconda3/bin/make"
       - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/make"
       - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/make"
+      - "/opt/local/bin/make"
+      - "/opt/local/sbin/make"
       - "/System/Cryptexes/App/usr/bin/make"
     found: "/usr/bin/make"
     search_context:
       ENV{PATH}:
+        - "/Users/victorchachereau/.platformio/penv/bin"
         - "/usr/local/bin"
         - "/usr/local/opt/coreutils/libexec/gnubin"
         - "/Users/victorchachereau/anaconda3/bin"
         - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
         - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/opt/local/bin"
+        - "/opt/local/sbin"
         - "/usr/local/bin"
         - "/System/Cryptexes/App/usr/bin"
         - "/usr/bin"
@@ -138,6 +159,8 @@ events:
         - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
         - "/usr/local/opt/coreutils/libexec/gnubin"
         - "/Users/victorchachereau/anaconda3/bin"
+        - "/opt/local/bin"
+        - "/opt/local/sbin"
   -
     kind: "find-v1"
     backtrace:
@@ -164,11 +187,14 @@ events:
       - "icx"
       - "clang++"
     candidate_directories:
+      - "/Users/victorchachereau/.platformio/penv/bin/"
       - "/usr/local/bin/"
       - "/usr/local/opt/coreutils/libexec/gnubin/"
       - "/Users/victorchachereau/anaconda3/bin/"
       - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/"
+      - "/opt/local/bin/"
+      - "/opt/local/sbin/"
       - "/System/Cryptexes/App/usr/bin/"
       - "/usr/bin/"
       - "/bin/"
@@ -178,20 +204,26 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
     searched_directories:
+      - "/Users/victorchachereau/.platformio/penv/bin/c++"
       - "/usr/local/bin/c++"
       - "/usr/local/opt/coreutils/libexec/gnubin/c++"
       - "/Users/victorchachereau/anaconda3/bin/c++"
       - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/c++"
       - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/c++"
+      - "/opt/local/bin/c++"
+      - "/opt/local/sbin/c++"
       - "/System/Cryptexes/App/usr/bin/c++"
     found: "/usr/bin/c++"
     search_context:
       ENV{PATH}:
+        - "/Users/victorchachereau/.platformio/penv/bin"
         - "/usr/local/bin"
         - "/usr/local/opt/coreutils/libexec/gnubin"
         - "/Users/victorchachereau/anaconda3/bin"
         - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
         - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/opt/local/bin"
+        - "/opt/local/sbin"
         - "/usr/local/bin"
         - "/System/Cryptexes/App/usr/bin"
         - "/usr/bin"
@@ -205,6 +237,8 @@ events:
         - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
         - "/usr/local/opt/coreutils/libexec/gnubin"
         - "/Users/victorchachereau/anaconda3/bin"
+        - "/opt/local/bin"
+        - "/opt/local/sbin"
   -
     kind: "find-v1"
     backtrace:
@@ -232,11 +266,14 @@ events:
     found: "/usr/local/share/cmake/Modules/CMakeCXXCompilerId.cpp.in"
     search_context:
       ENV{PATH}:
+        - "/Users/victorchachereau/.platformio/penv/bin"
         - "/usr/local/bin"
         - "/usr/local/opt/coreutils/libexec/gnubin"
         - "/Users/victorchachereau/anaconda3/bin"
         - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
         - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/opt/local/bin"
+        - "/opt/local/sbin"
         - "/usr/local/bin"
         - "/System/Cryptexes/App/usr/bin"
         - "/usr/bin"
@@ -250,6 +287,8 @@ events:
         - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
         - "/usr/local/opt/coreutils/libexec/gnubin"
         - "/Users/victorchachereau/anaconda3/bin"
+        - "/opt/local/bin"
+        - "/opt/local/sbin"
   -
     kind: "message-v1"
     backtrace:
@@ -270,7 +309,7 @@ events:
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
       
       The CXX compiler identification is AppleClang, found in:
-        /Users/victorchachereau/Documents/GitHub/son/tools/keyboard_to_midi_cpp/build/CMakeFiles/4.2.3/CompilerIdCXX/a.out
+        /Users/victorchachereau/Downloads/Projet Son/Synteensyzer/tools/keyboard_to_midi_cpp/build/CMakeFiles/4.2.3/CompilerIdCXX/a.out
       
   -
     kind: "message-v1"
@@ -325,11 +364,14 @@ events:
       - "ar"
     candidate_directories:
       - "/usr/bin/"
+      - "/Users/victorchachereau/.platformio/penv/bin/"
       - "/usr/local/bin/"
       - "/usr/local/opt/coreutils/libexec/gnubin/"
       - "/Users/victorchachereau/anaconda3/bin/"
       - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/"
+      - "/opt/local/bin/"
+      - "/opt/local/sbin/"
       - "/System/Cryptexes/App/usr/bin/"
       - "/bin/"
       - "/usr/sbin/"
@@ -340,11 +382,14 @@ events:
     found: "/usr/bin/ar"
     search_context:
       ENV{PATH}:
+        - "/Users/victorchachereau/.platformio/penv/bin"
         - "/usr/local/bin"
         - "/usr/local/opt/coreutils/libexec/gnubin"
         - "/Users/victorchachereau/anaconda3/bin"
         - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
         - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/opt/local/bin"
+        - "/opt/local/sbin"
         - "/usr/local/bin"
         - "/System/Cryptexes/App/usr/bin"
         - "/usr/bin"
@@ -358,6 +403,8 @@ events:
         - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
         - "/usr/local/opt/coreutils/libexec/gnubin"
         - "/Users/victorchachereau/anaconda3/bin"
+        - "/opt/local/bin"
+        - "/opt/local/sbin"
   -
     kind: "find-v1"
     backtrace:
@@ -379,11 +426,14 @@ events:
       - "ranlib"
     candidate_directories:
       - "/usr/bin/"
+      - "/Users/victorchachereau/.platformio/penv/bin/"
       - "/usr/local/bin/"
       - "/usr/local/opt/coreutils/libexec/gnubin/"
       - "/Users/victorchachereau/anaconda3/bin/"
       - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/"
+      - "/opt/local/bin/"
+      - "/opt/local/sbin/"
       - "/System/Cryptexes/App/usr/bin/"
       - "/bin/"
       - "/usr/sbin/"
@@ -394,11 +444,14 @@ events:
     found: "/usr/bin/ranlib"
     search_context:
       ENV{PATH}:
+        - "/Users/victorchachereau/.platformio/penv/bin"
         - "/usr/local/bin"
         - "/usr/local/opt/coreutils/libexec/gnubin"
         - "/Users/victorchachereau/anaconda3/bin"
         - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
         - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/opt/local/bin"
+        - "/opt/local/sbin"
         - "/usr/local/bin"
         - "/System/Cryptexes/App/usr/bin"
         - "/usr/bin"
@@ -412,6 +465,8 @@ events:
         - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
         - "/usr/local/opt/coreutils/libexec/gnubin"
         - "/Users/victorchachereau/anaconda3/bin"
+        - "/opt/local/bin"
+        - "/opt/local/sbin"
   -
     kind: "find-v1"
     backtrace:
@@ -433,11 +488,14 @@ events:
       - "strip"
     candidate_directories:
       - "/usr/bin/"
+      - "/Users/victorchachereau/.platformio/penv/bin/"
       - "/usr/local/bin/"
       - "/usr/local/opt/coreutils/libexec/gnubin/"
       - "/Users/victorchachereau/anaconda3/bin/"
       - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/"
+      - "/opt/local/bin/"
+      - "/opt/local/sbin/"
       - "/System/Cryptexes/App/usr/bin/"
       - "/bin/"
       - "/usr/sbin/"
@@ -448,11 +506,14 @@ events:
     found: "/usr/bin/strip"
     search_context:
       ENV{PATH}:
+        - "/Users/victorchachereau/.platformio/penv/bin"
         - "/usr/local/bin"
         - "/usr/local/opt/coreutils/libexec/gnubin"
         - "/Users/victorchachereau/anaconda3/bin"
         - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
         - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/opt/local/bin"
+        - "/opt/local/sbin"
         - "/usr/local/bin"
         - "/System/Cryptexes/App/usr/bin"
         - "/usr/bin"
@@ -466,6 +527,8 @@ events:
         - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
         - "/usr/local/opt/coreutils/libexec/gnubin"
         - "/Users/victorchachereau/anaconda3/bin"
+        - "/opt/local/bin"
+        - "/opt/local/sbin"
   -
     kind: "find-v1"
     backtrace:
@@ -487,11 +550,14 @@ events:
       - "ld"
     candidate_directories:
       - "/usr/bin/"
+      - "/Users/victorchachereau/.platformio/penv/bin/"
       - "/usr/local/bin/"
       - "/usr/local/opt/coreutils/libexec/gnubin/"
       - "/Users/victorchachereau/anaconda3/bin/"
       - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/"
+      - "/opt/local/bin/"
+      - "/opt/local/sbin/"
       - "/System/Cryptexes/App/usr/bin/"
       - "/bin/"
       - "/usr/sbin/"
@@ -502,11 +568,14 @@ events:
     found: "/usr/bin/ld"
     search_context:
       ENV{PATH}:
+        - "/Users/victorchachereau/.platformio/penv/bin"
         - "/usr/local/bin"
         - "/usr/local/opt/coreutils/libexec/gnubin"
         - "/Users/victorchachereau/anaconda3/bin"
         - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
         - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/opt/local/bin"
+        - "/opt/local/sbin"
         - "/usr/local/bin"
         - "/System/Cryptexes/App/usr/bin"
         - "/usr/bin"
@@ -520,6 +589,8 @@ events:
         - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
         - "/usr/local/opt/coreutils/libexec/gnubin"
         - "/Users/victorchachereau/anaconda3/bin"
+        - "/opt/local/bin"
+        - "/opt/local/sbin"
   -
     kind: "find-v1"
     backtrace:
@@ -541,11 +612,14 @@ events:
       - "nm"
     candidate_directories:
       - "/usr/bin/"
+      - "/Users/victorchachereau/.platformio/penv/bin/"
       - "/usr/local/bin/"
       - "/usr/local/opt/coreutils/libexec/gnubin/"
       - "/Users/victorchachereau/anaconda3/bin/"
       - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/"
+      - "/opt/local/bin/"
+      - "/opt/local/sbin/"
       - "/System/Cryptexes/App/usr/bin/"
       - "/bin/"
       - "/usr/sbin/"
@@ -556,11 +630,14 @@ events:
     found: "/usr/bin/nm"
     search_context:
       ENV{PATH}:
+        - "/Users/victorchachereau/.platformio/penv/bin"
         - "/usr/local/bin"
         - "/usr/local/opt/coreutils/libexec/gnubin"
         - "/Users/victorchachereau/anaconda3/bin"
         - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
         - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/opt/local/bin"
+        - "/opt/local/sbin"
         - "/usr/local/bin"
         - "/System/Cryptexes/App/usr/bin"
         - "/usr/bin"
@@ -574,6 +651,8 @@ events:
         - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
         - "/usr/local/opt/coreutils/libexec/gnubin"
         - "/Users/victorchachereau/anaconda3/bin"
+        - "/opt/local/bin"
+        - "/opt/local/sbin"
   -
     kind: "find-v1"
     backtrace:
@@ -595,11 +674,14 @@ events:
       - "objdump"
     candidate_directories:
       - "/usr/bin/"
+      - "/Users/victorchachereau/.platformio/penv/bin/"
       - "/usr/local/bin/"
       - "/usr/local/opt/coreutils/libexec/gnubin/"
       - "/Users/victorchachereau/anaconda3/bin/"
       - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/"
+      - "/opt/local/bin/"
+      - "/opt/local/sbin/"
       - "/System/Cryptexes/App/usr/bin/"
       - "/bin/"
       - "/usr/sbin/"
@@ -610,11 +692,14 @@ events:
     found: "/usr/bin/objdump"
     search_context:
       ENV{PATH}:
+        - "/Users/victorchachereau/.platformio/penv/bin"
         - "/usr/local/bin"
         - "/usr/local/opt/coreutils/libexec/gnubin"
         - "/Users/victorchachereau/anaconda3/bin"
         - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
         - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/opt/local/bin"
+        - "/opt/local/sbin"
         - "/usr/local/bin"
         - "/System/Cryptexes/App/usr/bin"
         - "/usr/bin"
@@ -628,6 +713,8 @@ events:
         - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
         - "/usr/local/opt/coreutils/libexec/gnubin"
         - "/Users/victorchachereau/anaconda3/bin"
+        - "/opt/local/bin"
+        - "/opt/local/sbin"
   -
     kind: "find-v1"
     backtrace:
@@ -649,11 +736,14 @@ events:
       - "objcopy"
     candidate_directories:
       - "/usr/bin/"
+      - "/Users/victorchachereau/.platformio/penv/bin/"
       - "/usr/local/bin/"
       - "/usr/local/opt/coreutils/libexec/gnubin/"
       - "/Users/victorchachereau/anaconda3/bin/"
       - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/"
+      - "/opt/local/bin/"
+      - "/opt/local/sbin/"
       - "/System/Cryptexes/App/usr/bin/"
       - "/bin/"
       - "/usr/sbin/"
@@ -663,11 +753,14 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
     searched_directories:
       - "/usr/bin/objcopy"
+      - "/Users/victorchachereau/.platformio/penv/bin/objcopy"
       - "/usr/local/bin/objcopy"
       - "/usr/local/opt/coreutils/libexec/gnubin/objcopy"
       - "/Users/victorchachereau/anaconda3/bin/objcopy"
       - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/objcopy"
       - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/objcopy"
+      - "/opt/local/bin/objcopy"
+      - "/opt/local/sbin/objcopy"
       - "/System/Cryptexes/App/usr/bin/objcopy"
       - "/bin/objcopy"
       - "/usr/sbin/objcopy"
@@ -678,11 +771,14 @@ events:
     found: false
     search_context:
       ENV{PATH}:
+        - "/Users/victorchachereau/.platformio/penv/bin"
         - "/usr/local/bin"
         - "/usr/local/opt/coreutils/libexec/gnubin"
         - "/Users/victorchachereau/anaconda3/bin"
         - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
         - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/opt/local/bin"
+        - "/opt/local/sbin"
         - "/usr/local/bin"
         - "/System/Cryptexes/App/usr/bin"
         - "/usr/bin"
@@ -696,6 +792,8 @@ events:
         - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
         - "/usr/local/opt/coreutils/libexec/gnubin"
         - "/Users/victorchachereau/anaconda3/bin"
+        - "/opt/local/bin"
+        - "/opt/local/sbin"
   -
     kind: "find-v1"
     backtrace:
@@ -717,11 +815,14 @@ events:
       - "readelf"
     candidate_directories:
       - "/usr/bin/"
+      - "/Users/victorchachereau/.platformio/penv/bin/"
       - "/usr/local/bin/"
       - "/usr/local/opt/coreutils/libexec/gnubin/"
       - "/Users/victorchachereau/anaconda3/bin/"
       - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/"
+      - "/opt/local/bin/"
+      - "/opt/local/sbin/"
       - "/System/Cryptexes/App/usr/bin/"
       - "/bin/"
       - "/usr/sbin/"
@@ -731,11 +832,14 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
     searched_directories:
       - "/usr/bin/readelf"
+      - "/Users/victorchachereau/.platformio/penv/bin/readelf"
       - "/usr/local/bin/readelf"
       - "/usr/local/opt/coreutils/libexec/gnubin/readelf"
       - "/Users/victorchachereau/anaconda3/bin/readelf"
       - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/readelf"
       - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/readelf"
+      - "/opt/local/bin/readelf"
+      - "/opt/local/sbin/readelf"
       - "/System/Cryptexes/App/usr/bin/readelf"
       - "/bin/readelf"
       - "/usr/sbin/readelf"
@@ -746,11 +850,14 @@ events:
     found: false
     search_context:
       ENV{PATH}:
+        - "/Users/victorchachereau/.platformio/penv/bin"
         - "/usr/local/bin"
         - "/usr/local/opt/coreutils/libexec/gnubin"
         - "/Users/victorchachereau/anaconda3/bin"
         - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
         - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/opt/local/bin"
+        - "/opt/local/sbin"
         - "/usr/local/bin"
         - "/System/Cryptexes/App/usr/bin"
         - "/usr/bin"
@@ -764,6 +871,8 @@ events:
         - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
         - "/usr/local/opt/coreutils/libexec/gnubin"
         - "/Users/victorchachereau/anaconda3/bin"
+        - "/opt/local/bin"
+        - "/opt/local/sbin"
   -
     kind: "find-v1"
     backtrace:
@@ -785,11 +894,14 @@ events:
       - "dlltool"
     candidate_directories:
       - "/usr/bin/"
+      - "/Users/victorchachereau/.platformio/penv/bin/"
       - "/usr/local/bin/"
       - "/usr/local/opt/coreutils/libexec/gnubin/"
       - "/Users/victorchachereau/anaconda3/bin/"
       - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/"
+      - "/opt/local/bin/"
+      - "/opt/local/sbin/"
       - "/System/Cryptexes/App/usr/bin/"
       - "/bin/"
       - "/usr/sbin/"
@@ -799,11 +911,14 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
     searched_directories:
       - "/usr/bin/dlltool"
+      - "/Users/victorchachereau/.platformio/penv/bin/dlltool"
       - "/usr/local/bin/dlltool"
       - "/usr/local/opt/coreutils/libexec/gnubin/dlltool"
       - "/Users/victorchachereau/anaconda3/bin/dlltool"
       - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/dlltool"
       - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/dlltool"
+      - "/opt/local/bin/dlltool"
+      - "/opt/local/sbin/dlltool"
       - "/System/Cryptexes/App/usr/bin/dlltool"
       - "/bin/dlltool"
       - "/usr/sbin/dlltool"
@@ -814,11 +929,14 @@ events:
     found: false
     search_context:
       ENV{PATH}:
+        - "/Users/victorchachereau/.platformio/penv/bin"
         - "/usr/local/bin"
         - "/usr/local/opt/coreutils/libexec/gnubin"
         - "/Users/victorchachereau/anaconda3/bin"
         - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
         - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/opt/local/bin"
+        - "/opt/local/sbin"
         - "/usr/local/bin"
         - "/System/Cryptexes/App/usr/bin"
         - "/usr/bin"
@@ -832,6 +950,8 @@ events:
         - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
         - "/usr/local/opt/coreutils/libexec/gnubin"
         - "/Users/victorchachereau/anaconda3/bin"
+        - "/opt/local/bin"
+        - "/opt/local/sbin"
   -
     kind: "find-v1"
     backtrace:
@@ -853,11 +973,14 @@ events:
       - "addr2line"
     candidate_directories:
       - "/usr/bin/"
+      - "/Users/victorchachereau/.platformio/penv/bin/"
       - "/usr/local/bin/"
       - "/usr/local/opt/coreutils/libexec/gnubin/"
       - "/Users/victorchachereau/anaconda3/bin/"
       - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/"
+      - "/opt/local/bin/"
+      - "/opt/local/sbin/"
       - "/System/Cryptexes/App/usr/bin/"
       - "/bin/"
       - "/usr/sbin/"
@@ -867,11 +990,14 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
     searched_directories:
       - "/usr/bin/addr2line"
+      - "/Users/victorchachereau/.platformio/penv/bin/addr2line"
       - "/usr/local/bin/addr2line"
       - "/usr/local/opt/coreutils/libexec/gnubin/addr2line"
       - "/Users/victorchachereau/anaconda3/bin/addr2line"
       - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/addr2line"
       - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/addr2line"
+      - "/opt/local/bin/addr2line"
+      - "/opt/local/sbin/addr2line"
       - "/System/Cryptexes/App/usr/bin/addr2line"
       - "/bin/addr2line"
       - "/usr/sbin/addr2line"
@@ -882,11 +1008,14 @@ events:
     found: false
     search_context:
       ENV{PATH}:
+        - "/Users/victorchachereau/.platformio/penv/bin"
         - "/usr/local/bin"
         - "/usr/local/opt/coreutils/libexec/gnubin"
         - "/Users/victorchachereau/anaconda3/bin"
         - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
         - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/opt/local/bin"
+        - "/opt/local/sbin"
         - "/usr/local/bin"
         - "/System/Cryptexes/App/usr/bin"
         - "/usr/bin"
@@ -900,6 +1029,8 @@ events:
         - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
         - "/usr/local/opt/coreutils/libexec/gnubin"
         - "/Users/victorchachereau/anaconda3/bin"
+        - "/opt/local/bin"
+        - "/opt/local/sbin"
   -
     kind: "find-v1"
     backtrace:
@@ -921,11 +1052,14 @@ events:
       - "tapi"
     candidate_directories:
       - "/usr/bin/"
+      - "/Users/victorchachereau/.platformio/penv/bin/"
       - "/usr/local/bin/"
       - "/usr/local/opt/coreutils/libexec/gnubin/"
       - "/Users/victorchachereau/anaconda3/bin/"
       - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/"
+      - "/opt/local/bin/"
+      - "/opt/local/sbin/"
       - "/System/Cryptexes/App/usr/bin/"
       - "/bin/"
       - "/usr/sbin/"
@@ -935,11 +1069,14 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
     searched_directories:
       - "/usr/bin/tapi"
+      - "/Users/victorchachereau/.platformio/penv/bin/tapi"
       - "/usr/local/bin/tapi"
       - "/usr/local/opt/coreutils/libexec/gnubin/tapi"
       - "/Users/victorchachereau/anaconda3/bin/tapi"
       - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/tapi"
       - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/tapi"
+      - "/opt/local/bin/tapi"
+      - "/opt/local/sbin/tapi"
       - "/System/Cryptexes/App/usr/bin/tapi"
       - "/bin/tapi"
       - "/usr/sbin/tapi"
@@ -950,11 +1087,14 @@ events:
     found: false
     search_context:
       ENV{PATH}:
+        - "/Users/victorchachereau/.platformio/penv/bin"
         - "/usr/local/bin"
         - "/usr/local/opt/coreutils/libexec/gnubin"
         - "/Users/victorchachereau/anaconda3/bin"
         - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
         - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/opt/local/bin"
+        - "/opt/local/sbin"
         - "/usr/local/bin"
         - "/System/Cryptexes/App/usr/bin"
         - "/usr/bin"
@@ -968,6 +1108,8 @@ events:
         - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
         - "/usr/local/opt/coreutils/libexec/gnubin"
         - "/Users/victorchachereau/anaconda3/bin"
+        - "/opt/local/bin"
+        - "/opt/local/sbin"
   -
     kind: "find-v1"
     backtrace:
@@ -988,11 +1130,14 @@ events:
     names:
       - "install_name_tool"
     candidate_directories:
+      - "/Users/victorchachereau/.platformio/penv/bin/"
       - "/usr/local/bin/"
       - "/usr/local/opt/coreutils/libexec/gnubin/"
       - "/Users/victorchachereau/anaconda3/bin/"
       - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/"
+      - "/opt/local/bin/"
+      - "/opt/local/sbin/"
       - "/System/Cryptexes/App/usr/bin/"
       - "/usr/bin/"
       - "/bin/"
@@ -1002,20 +1147,26 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
     searched_directories:
+      - "/Users/victorchachereau/.platformio/penv/bin/install_name_tool"
       - "/usr/local/bin/install_name_tool"
       - "/usr/local/opt/coreutils/libexec/gnubin/install_name_tool"
       - "/Users/victorchachereau/anaconda3/bin/install_name_tool"
       - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/install_name_tool"
       - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/install_name_tool"
+      - "/opt/local/bin/install_name_tool"
+      - "/opt/local/sbin/install_name_tool"
       - "/System/Cryptexes/App/usr/bin/install_name_tool"
     found: "/usr/bin/install_name_tool"
     search_context:
       ENV{PATH}:
+        - "/Users/victorchachereau/.platformio/penv/bin"
         - "/usr/local/bin"
         - "/usr/local/opt/coreutils/libexec/gnubin"
         - "/Users/victorchachereau/anaconda3/bin"
         - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
         - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/opt/local/bin"
+        - "/opt/local/sbin"
         - "/usr/local/bin"
         - "/System/Cryptexes/App/usr/bin"
         - "/usr/bin"
@@ -1029,6 +1180,8 @@ events:
         - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
         - "/usr/local/opt/coreutils/libexec/gnubin"
         - "/Users/victorchachereau/anaconda3/bin"
+        - "/opt/local/bin"
+        - "/opt/local/sbin"
       CMAKE_INSTALL_PREFIX: "/usr/local"
   -
     kind: "try_compile-v1"
@@ -1039,8 +1192,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "/Users/victorchachereau/Documents/GitHub/son/tools/keyboard_to_midi_cpp/build/CMakeFiles/CMakeScratch/TryCompile-2dnJSJ"
-      binary: "/Users/victorchachereau/Documents/GitHub/son/tools/keyboard_to_midi_cpp/build/CMakeFiles/CMakeScratch/TryCompile-2dnJSJ"
+      source: "/Users/victorchachereau/Downloads/Projet Son/Synteensyzer/tools/keyboard_to_midi_cpp/build/CMakeFiles/CMakeScratch/TryCompile-EuwuPv"
+      binary: "/Users/victorchachereau/Downloads/Projet Son/Synteensyzer/tools/keyboard_to_midi_cpp/build/CMakeFiles/CMakeScratch/TryCompile-EuwuPv"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -1053,18 +1206,18 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/Users/victorchachereau/Documents/GitHub/son/tools/keyboard_to_midi_cpp/build/CMakeFiles/CMakeScratch/TryCompile-2dnJSJ'
+        Change Dir: '/Users/victorchachereau/Downloads/Projet Son/Synteensyzer/tools/keyboard_to_midi_cpp/build/CMakeFiles/CMakeScratch/TryCompile-EuwuPv'
         
-        Run Build Command(s): /usr/local/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_964ec/fast
-        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_964ec.dir/build.make CMakeFiles/cmTC_964ec.dir/build
-        Building CXX object CMakeFiles/cmTC_964ec.dir/CMakeCXXCompilerABI.cpp.o
-        /usr/bin/c++   -v -Wl,-v -MD -MT CMakeFiles/cmTC_964ec.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_964ec.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_964ec.dir/CMakeCXXCompilerABI.cpp.o -c /usr/local/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+        Run Build Command(s): /usr/local/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_7bc4d/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_7bc4d.dir/build.make CMakeFiles/cmTC_7bc4d.dir/build
+        Building CXX object CMakeFiles/cmTC_7bc4d.dir/CMakeCXXCompilerABI.cpp.o
+        /usr/bin/c++   -v -Wl,-v -MD -MT CMakeFiles/cmTC_7bc4d.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_7bc4d.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_7bc4d.dir/CMakeCXXCompilerABI.cpp.o -c /usr/local/share/cmake/Modules/CMakeCXXCompilerABI.cpp
         Apple clang version 15.0.0 (clang-1500.1.0.2.5)
         Target: x86_64-apple-darwin22.6.0
         Thread model: posix
         InstalledDir: /Library/Developer/CommandLineTools/usr/bin
         clang: warning: -Wl,-v: 'linker' input unused [-Wunused-command-line-argument]
-         "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple x86_64-apple-macosx13.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -mrelax-all --mrelax-relocations -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=all -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=2 -target-sdk-version=14.2 -fvisibility-inlines-hidden-static-local-var -target-cpu penryn -tune-cpu generic -mllvm -treat-scalable-fixed-error-as-warning -debugger-tuning=lldb -target-linker-version 1022.1 -v -fcoverage-compilation-dir=/Users/victorchachereau/Documents/GitHub/son/tools/keyboard_to_midi_cpp/build/CMakeFiles/CMakeScratch/TryCompile-2dnJSJ -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/15.0.0 -dependency-file CMakeFiles/cmTC_964ec.dir/CMakeCXXCompilerABI.cpp.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_964ec.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1 -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/15.0.0/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -Wno-reserved-identifier -Wno-gnu-folding-constant -fdeprecated-macro -fdebug-compilation-dir=/Users/victorchachereau/Documents/GitHub/son/tools/keyboard_to_midi_cpp/build/CMakeFiles/CMakeScratch/TryCompile-2dnJSJ -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fno-cxx-modules -fcxx-exceptions -fexceptions -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -mllvm -disable-aligned-alloc-awareness=1 -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_964ec.dir/CMakeCXXCompilerABI.cpp.o -x c++ /usr/local/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+         "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple x86_64-apple-macosx13.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -mrelax-all --mrelax-relocations -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=all -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=2 -target-sdk-version=14.2 -fvisibility-inlines-hidden-static-local-var -target-cpu penryn -tune-cpu generic -mllvm -treat-scalable-fixed-error-as-warning -debugger-tuning=lldb -target-linker-version 1022.1 -v "-fcoverage-compilation-dir=/Users/victorchachereau/Downloads/Projet Son/Synteensyzer/tools/keyboard_to_midi_cpp/build/CMakeFiles/CMakeScratch/TryCompile-EuwuPv" -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/15.0.0 -dependency-file CMakeFiles/cmTC_7bc4d.dir/CMakeCXXCompilerABI.cpp.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_7bc4d.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1 -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/15.0.0/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -Wno-reserved-identifier -Wno-gnu-folding-constant -fdeprecated-macro "-fdebug-compilation-dir=/Users/victorchachereau/Downloads/Projet Son/Synteensyzer/tools/keyboard_to_midi_cpp/build/CMakeFiles/CMakeScratch/TryCompile-EuwuPv" -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fno-cxx-modules -fcxx-exceptions -fexceptions -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -mllvm -disable-aligned-alloc-awareness=1 -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_7bc4d.dir/CMakeCXXCompilerABI.cpp.o -x c++ /usr/local/share/cmake/Modules/CMakeCXXCompilerABI.cpp
         clang -cc1 version 15.0.0 (clang-1500.1.0.2.5) default target x86_64-apple-darwin22.6.0
         ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include"
         ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks"
@@ -1077,13 +1230,13 @@ events:
          /Library/Developer/CommandLineTools/usr/include
          /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks (framework directory)
         End of search list.
-        Linking CXX executable cmTC_964ec
-        /usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_964ec.dir/link.txt --verbose=1
+        Linking CXX executable cmTC_7bc4d
+        /usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7bc4d.dir/link.txt --verbose=1
         Apple clang version 15.0.0 (clang-1500.1.0.2.5)
         Target: x86_64-apple-darwin22.6.0
         Thread model: posix
         InstalledDir: /Library/Developer/CommandLineTools/usr/bin
-         "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch x86_64 -platform_version macos 13.0.0 14.2 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -o cmTC_964ec -L/usr/local/lib -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_964ec.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/15.0.0/lib/darwin/libclang_rt.osx.a
+         "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch x86_64 -platform_version macos 13.0.0 14.2 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -o cmTC_7bc4d -L/usr/local/lib -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_7bc4d.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/15.0.0/lib/darwin/libclang_rt.osx.a
         @(#)PROGRAM:ld  PROJECT:dyld-1022.1
         BUILD 13:20:30 Nov 10 2023
         configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h
@@ -1093,7 +1246,7 @@ events:
         Library search paths:
         	/usr/local/lib
         Framework search paths:
-        /usr/bin/c++ -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_964ec.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_964ec
+        /usr/bin/c++ -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_7bc4d.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_7bc4d
         
       exitCode: 0
   -
@@ -1139,18 +1292,18 @@ events:
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: '/Users/victorchachereau/Documents/GitHub/son/tools/keyboard_to_midi_cpp/build/CMakeFiles/CMakeScratch/TryCompile-2dnJSJ']
+        ignore line: [Change Dir: '/Users/victorchachereau/Downloads/Projet Son/Synteensyzer/tools/keyboard_to_midi_cpp/build/CMakeFiles/CMakeScratch/TryCompile-EuwuPv']
         ignore line: []
-        ignore line: [Run Build Command(s): /usr/local/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_964ec/fast]
-        ignore line: [/Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_964ec.dir/build.make CMakeFiles/cmTC_964ec.dir/build]
-        ignore line: [Building CXX object CMakeFiles/cmTC_964ec.dir/CMakeCXXCompilerABI.cpp.o]
-        ignore line: [/usr/bin/c++   -v -Wl -v -MD -MT CMakeFiles/cmTC_964ec.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_964ec.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_964ec.dir/CMakeCXXCompilerABI.cpp.o -c /usr/local/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Run Build Command(s): /usr/local/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_7bc4d/fast]
+        ignore line: [/Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_7bc4d.dir/build.make CMakeFiles/cmTC_7bc4d.dir/build]
+        ignore line: [Building CXX object CMakeFiles/cmTC_7bc4d.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/usr/bin/c++   -v -Wl -v -MD -MT CMakeFiles/cmTC_7bc4d.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_7bc4d.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_7bc4d.dir/CMakeCXXCompilerABI.cpp.o -c /usr/local/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
         ignore line: [Apple clang version 15.0.0 (clang-1500.1.0.2.5)]
         ignore line: [Target: x86_64-apple-darwin22.6.0]
         ignore line: [Thread model: posix]
         ignore line: [InstalledDir: /Library/Developer/CommandLineTools/usr/bin]
         ignore line: [clang: warning: -Wl -v: 'linker' input unused [-Wunused-command-line-argument]]
-        ignore line: [ "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple x86_64-apple-macosx13.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -mrelax-all --mrelax-relocations -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=all -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=2 -target-sdk-version=14.2 -fvisibility-inlines-hidden-static-local-var -target-cpu penryn -tune-cpu generic -mllvm -treat-scalable-fixed-error-as-warning -debugger-tuning=lldb -target-linker-version 1022.1 -v -fcoverage-compilation-dir=/Users/victorchachereau/Documents/GitHub/son/tools/keyboard_to_midi_cpp/build/CMakeFiles/CMakeScratch/TryCompile-2dnJSJ -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/15.0.0 -dependency-file CMakeFiles/cmTC_964ec.dir/CMakeCXXCompilerABI.cpp.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_964ec.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1 -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/15.0.0/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -Wno-reserved-identifier -Wno-gnu-folding-constant -fdeprecated-macro -fdebug-compilation-dir=/Users/victorchachereau/Documents/GitHub/son/tools/keyboard_to_midi_cpp/build/CMakeFiles/CMakeScratch/TryCompile-2dnJSJ -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fno-cxx-modules -fcxx-exceptions -fexceptions -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -mllvm -disable-aligned-alloc-awareness=1 -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_964ec.dir/CMakeCXXCompilerABI.cpp.o -x c++ /usr/local/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [ "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple x86_64-apple-macosx13.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -mrelax-all --mrelax-relocations -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=all -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=2 -target-sdk-version=14.2 -fvisibility-inlines-hidden-static-local-var -target-cpu penryn -tune-cpu generic -mllvm -treat-scalable-fixed-error-as-warning -debugger-tuning=lldb -target-linker-version 1022.1 -v "-fcoverage-compilation-dir=/Users/victorchachereau/Downloads/Projet Son/Synteensyzer/tools/keyboard_to_midi_cpp/build/CMakeFiles/CMakeScratch/TryCompile-EuwuPv" -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/15.0.0 -dependency-file CMakeFiles/cmTC_7bc4d.dir/CMakeCXXCompilerABI.cpp.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_7bc4d.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1 -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/15.0.0/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -Wno-reserved-identifier -Wno-gnu-folding-constant -fdeprecated-macro "-fdebug-compilation-dir=/Users/victorchachereau/Downloads/Projet Son/Synteensyzer/tools/keyboard_to_midi_cpp/build/CMakeFiles/CMakeScratch/TryCompile-EuwuPv" -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fno-cxx-modules -fcxx-exceptions -fexceptions -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -mllvm -disable-aligned-alloc-awareness=1 -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_7bc4d.dir/CMakeCXXCompilerABI.cpp.o -x c++ /usr/local/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
         ignore line: [clang -cc1 version 15.0.0 (clang-1500.1.0.2.5) default target x86_64-apple-darwin22.6.0]
         ignore line: [ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include"]
         ignore line: [ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks"]
@@ -1163,13 +1316,13 @@ events:
         ignore line: [ /Library/Developer/CommandLineTools/usr/include]
         ignore line: [ /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks (framework directory)]
         ignore line: [End of search list.]
-        ignore line: [Linking CXX executable cmTC_964ec]
-        ignore line: [/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_964ec.dir/link.txt --verbose=1]
+        ignore line: [Linking CXX executable cmTC_7bc4d]
+        ignore line: [/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7bc4d.dir/link.txt --verbose=1]
         ignore line: [Apple clang version 15.0.0 (clang-1500.1.0.2.5)]
         ignore line: [Target: x86_64-apple-darwin22.6.0]
         ignore line: [Thread model: posix]
         ignore line: [InstalledDir: /Library/Developer/CommandLineTools/usr/bin]
-        link line: [ "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch x86_64 -platform_version macos 13.0.0 14.2 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -o cmTC_964ec -L/usr/local/lib -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_964ec.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/15.0.0/lib/darwin/libclang_rt.osx.a]
+        link line: [ "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch x86_64 -platform_version macos 13.0.0 14.2 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -o cmTC_7bc4d -L/usr/local/lib -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_7bc4d.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/15.0.0/lib/darwin/libclang_rt.osx.a]
           arg [/Library/Developer/CommandLineTools/usr/bin/ld] ==> ignore
           arg [-demangle] ==> ignore
           arg [-lto_library] ==> ignore, skip following value
@@ -1184,12 +1337,12 @@ events:
           arg [-syslibroot] ==> ignore
           arg [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_964ec] ==> ignore
+          arg [cmTC_7bc4d] ==> ignore
           arg [-L/usr/local/lib] ==> dir [/usr/local/lib]
           arg [-search_paths_first] ==> ignore
           arg [-headerpad_max_install_names] ==> ignore
           arg [-v] ==> ignore
-          arg [CMakeFiles/cmTC_964ec.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [CMakeFiles/cmTC_7bc4d.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
           arg [-lc++] ==> lib [c++]
           arg [-lSystem] ==> lib [System]
           arg [/Library/Developer/CommandLineTools/usr/lib/clang/15.0.0/lib/darwin/libclang_rt.osx.a] ==> lib [/Library/Developer/CommandLineTools/usr/lib/clang/15.0.0/lib/darwin/libclang_rt.osx.a]
@@ -1242,11 +1395,14 @@ events:
       - "pkg-config"
       - "pkgconf"
     candidate_directories:
+      - "/Users/victorchachereau/.platformio/penv/bin/"
       - "/usr/local/bin/"
       - "/usr/local/opt/coreutils/libexec/gnubin/"
       - "/Users/victorchachereau/anaconda3/bin/"
       - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
       - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/"
+      - "/opt/local/bin/"
+      - "/opt/local/sbin/"
       - "/System/Cryptexes/App/usr/bin/"
       - "/usr/bin/"
       - "/bin/"
@@ -1283,14 +1439,20 @@ events:
       - "/opt/local/"
       - "/Users/victorchachereau/Applications/"
       - "/Applications/"
+    searched_directories:
+      - "/Users/victorchachereau/.platformio/penv/bin/pkg-config"
+      - "/Users/victorchachereau/.platformio/penv/bin/pkgconf"
     found: "/usr/local/bin/pkg-config"
     search_context:
       ENV{PATH}:
+        - "/Users/victorchachereau/.platformio/penv/bin"
         - "/usr/local/bin"
         - "/usr/local/opt/coreutils/libexec/gnubin"
         - "/Users/victorchachereau/anaconda3/bin"
         - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
         - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/opt/local/bin"
+        - "/opt/local/sbin"
         - "/usr/local/bin"
         - "/System/Cryptexes/App/usr/bin"
         - "/usr/bin"
@@ -1304,6 +1466,8 @@ events:
         - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
         - "/usr/local/opt/coreutils/libexec/gnubin"
         - "/Users/victorchachereau/anaconda3/bin"
+        - "/opt/local/bin"
+        - "/opt/local/sbin"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr"
@@ -1347,154 +1511,7 @@ events:
     found: "/usr/local/lib/libSDL2.dylib"
     search_context:
       ENV{PATH}:
-        - "/usr/local/bin"
-        - "/usr/local/opt/coreutils/libexec/gnubin"
-        - "/Users/victorchachereau/anaconda3/bin"
-        - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
-        - "/usr/local/bin"
-        - "/System/Cryptexes/App/usr/bin"
-        - "/usr/bin"
-        - "/bin"
-        - "/usr/sbin"
-        - "/sbin"
-        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
-        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
-        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
-        - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
-        - "/usr/local/opt/coreutils/libexec/gnubin"
-        - "/Users/victorchachereau/anaconda3/bin"
-      CMAKE_INSTALL_PREFIX: "/usr/local"
-      CMAKE_SYSTEM_PREFIX_PATH:
-        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr"
-        - "/usr/local"
-        - "/usr/local"
-        - "/usr"
-        - "/"
-        - "/usr/local"
-        - "/usr/local"
-        - "/usr/X11R6"
-        - "/usr/pkg"
-        - "/opt"
-        - "/sw"
-        - "/opt/local"
-      CMAKE_SYSTEM_LIBRARY_PATH:
-        - "/usr/lib/X11"
-      CMAKE_SYSTEM_FRAMEWORK_PATH:
-        - "~/Library/Frameworks"
-        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks"
-        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Network/Library/Frameworks"
-        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks"
-        - "/Library/Developer/CommandLineTools/Library/Frameworks"
-        - "/Library/Developer/CommandLineTools/Library/Frameworks"
-        - "/Library/Frameworks"
-        - "/Network/Library/Frameworks"
-        - "/System/Library/Frameworks"
-...
-
----
-events:
-  -
-    kind: "find-v1"
-    backtrace:
-      - "/usr/local/share/cmake/Modules/FindPkgConfig.cmake:761 (find_library)"
-      - "/usr/local/share/cmake/Modules/FindPkgConfig.cmake:811 (_pkg_find_libs)"
-      - "/usr/local/share/cmake/Modules/FindPkgConfig.cmake:1149 (_pkg_recalculate)"
-      - "/usr/local/share/cmake/Modules/FindPkgConfig.cmake:1166 (_pkg_check_modules_internal)"
-      - "CMakeLists.txt:9 (pkg_check_modules)"
-    mode: "library"
-    variable: "pkgcfg_lib_RTMIDI_rtmidi"
-    description: "Path to a library."
-    settings:
-      SearchFramework: "FIRST"
-      SearchAppBundle: "FIRST"
-      CMAKE_FIND_USE_CMAKE_PATH: true
-      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
-      CMAKE_FIND_USE_INSTALL_PREFIX: true
-    names:
-      - "rtmidi"
-    candidate_directories:
-      - "/usr/local/Cellar/rtmidi/6.0.0/lib/"
-    found: "/usr/local/Cellar/rtmidi/6.0.0/lib/librtmidi.dylib"
-    search_context:
-      ENV{PATH}:
-        - "/usr/local/bin"
-        - "/usr/local/opt/coreutils/libexec/gnubin"
-        - "/Users/victorchachereau/anaconda3/bin"
-        - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
-        - "/usr/local/bin"
-        - "/System/Cryptexes/App/usr/bin"
-        - "/usr/bin"
-        - "/bin"
-        - "/usr/sbin"
-        - "/sbin"
-        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
-        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
-        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
-        - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
-        - "/usr/local/opt/coreutils/libexec/gnubin"
-        - "/Users/victorchachereau/anaconda3/bin"
-      CMAKE_INSTALL_PREFIX: "/usr/local"
-      CMAKE_SYSTEM_PREFIX_PATH:
-        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr"
-        - "/usr/local"
-        - "/usr/local"
-        - "/usr"
-        - "/"
-        - "/usr/local"
-        - "/usr/local"
-        - "/usr/X11R6"
-        - "/usr/pkg"
-        - "/opt"
-        - "/sw"
-        - "/opt/local"
-      CMAKE_SYSTEM_LIBRARY_PATH:
-        - "/usr/lib/X11"
-      CMAKE_SYSTEM_FRAMEWORK_PATH:
-        - "~/Library/Frameworks"
-        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks"
-        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Network/Library/Frameworks"
-        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks"
-        - "/Library/Developer/CommandLineTools/Library/Frameworks"
-        - "/Library/Developer/CommandLineTools/Library/Frameworks"
-        - "/Library/Frameworks"
-        - "/Network/Library/Frameworks"
-        - "/System/Library/Frameworks"
-...
-
----
-events:
-  -
-    kind: "find-v1"
-    backtrace:
-      - "/usr/local/share/cmake/Modules/FindPkgConfig.cmake:761 (find_library)"
-      - "/usr/local/share/cmake/Modules/FindPkgConfig.cmake:811 (_pkg_find_libs)"
-      - "/usr/local/share/cmake/Modules/FindPkgConfig.cmake:1149 (_pkg_recalculate)"
-      - "/usr/local/share/cmake/Modules/FindPkgConfig.cmake:1166 (_pkg_check_modules_internal)"
-      - "CMakeLists.txt:9 (pkg_check_modules)"
-    mode: "library"
-    variable: "pkgcfg_lib_SDL2TTF_SDL2_ttf"
-    description: "Path to a library."
-    settings:
-      SearchFramework: "FIRST"
-      SearchAppBundle: "FIRST"
-      CMAKE_FIND_USE_CMAKE_PATH: true
-      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
-      CMAKE_FIND_USE_INSTALL_PREFIX: true
-    names:
-      - "SDL2_ttf"
-    candidate_directories:
-      - "/usr/local/Cellar/sdl2_ttf/2.24.0/lib/"
-    found: "/usr/local/Cellar/sdl2_ttf/2.24.0/lib/libSDL2_ttf.dylib"
-    search_context:
-      ENV{PATH}:
+        - "/Users/victorchachereau/.platformio/penv/bin"
         - "/usr/local/bin"
         - "/usr/local/opt/coreutils/libexec/gnubin"
         - "/Users/victorchachereau/anaconda3/bin"
@@ -1543,87 +1560,6 @@ events:
         - "/Library/Frameworks"
         - "/Network/Library/Frameworks"
         - "/System/Library/Frameworks"
-  -
-    kind: "find-v1"
-    backtrace:
-      - "/usr/local/share/cmake/Modules/FindPkgConfig.cmake:761 (find_library)"
-      - "/usr/local/share/cmake/Modules/FindPkgConfig.cmake:811 (_pkg_find_libs)"
-      - "/usr/local/share/cmake/Modules/FindPkgConfig.cmake:1149 (_pkg_recalculate)"
-      - "/usr/local/share/cmake/Modules/FindPkgConfig.cmake:1166 (_pkg_check_modules_internal)"
-      - "CMakeLists.txt:9 (pkg_check_modules)"
-    mode: "library"
-    variable: "pkgcfg_lib_SDL2TTF_SDL2"
-    description: "Path to a library."
-    settings:
-      SearchFramework: "FIRST"
-      SearchAppBundle: "FIRST"
-      CMAKE_FIND_USE_CMAKE_PATH: true
-      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
-      CMAKE_FIND_USE_INSTALL_PREFIX: true
-    names:
-      - "SDL2"
-    candidate_directories:
-      - "/usr/local/Cellar/sdl2_ttf/2.24.0/lib/"
-      - "/usr/local/lib/"
-    searched_directories:
-      - "/usr/local/Cellar/sdl2_ttf/2.24.0/lib/"
-    found: "/usr/local/lib/libSDL2.dylib"
-    search_context:
-      ENV{PATH}:
-        - "/usr/local/bin"
-        - "/usr/local/opt/coreutils/libexec/gnubin"
-        - "/Users/victorchachereau/anaconda3/bin"
-        - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
-        - "/opt/local/bin"
-        - "/opt/local/sbin"
-        - "/usr/local/bin"
-        - "/System/Cryptexes/App/usr/bin"
-        - "/usr/bin"
-        - "/bin"
-        - "/usr/sbin"
-        - "/sbin"
-        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
-        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
-        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
-        - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
-        - "/usr/local/opt/coreutils/libexec/gnubin"
-        - "/Users/victorchachereau/anaconda3/bin"
-        - "/opt/local/bin"
-        - "/opt/local/sbin"
-      CMAKE_INSTALL_PREFIX: "/usr/local"
-      CMAKE_SYSTEM_PREFIX_PATH:
-        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr"
-        - "/usr/local"
-        - "/usr/local"
-        - "/usr"
-        - "/"
-        - "/usr/local"
-        - "/usr/local"
-        - "/usr/X11R6"
-        - "/usr/pkg"
-        - "/opt"
-        - "/sw"
-        - "/opt/local"
-      CMAKE_SYSTEM_LIBRARY_PATH:
-        - "/usr/lib/X11"
-      CMAKE_SYSTEM_FRAMEWORK_PATH:
-        - "~/Library/Frameworks"
-        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks"
-        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Network/Library/Frameworks"
-        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks"
-        - "/Library/Developer/CommandLineTools/Library/Frameworks"
-        - "/Library/Developer/CommandLineTools/Library/Frameworks"
-        - "/Library/Frameworks"
-        - "/Network/Library/Frameworks"
-        - "/System/Library/Frameworks"
-...
-
----
-events:
   -
     kind: "find-v1"
     backtrace:
@@ -1650,6 +1586,7 @@ events:
     found: "/usr/local/Cellar/sdl2_ttf/2.24.0/lib/libSDL2_ttf.dylib"
     search_context:
       ENV{PATH}:
+        - "/Users/victorchachereau/.platformio/penv/bin"
         - "/usr/local/bin"
         - "/usr/local/opt/coreutils/libexec/gnubin"
         - "/Users/victorchachereau/anaconda3/bin"
@@ -1727,6 +1664,82 @@ events:
     found: "/usr/local/lib/libSDL2.dylib"
     search_context:
       ENV{PATH}:
+        - "/Users/victorchachereau/.platformio/penv/bin"
+        - "/usr/local/bin"
+        - "/usr/local/opt/coreutils/libexec/gnubin"
+        - "/Users/victorchachereau/anaconda3/bin"
+        - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/opt/local/bin"
+        - "/opt/local/sbin"
+        - "/usr/local/bin"
+        - "/System/Cryptexes/App/usr/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/sbin"
+        - "/sbin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
+        - "/Users/victorchachereau/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
+        - "/usr/local/opt/coreutils/libexec/gnubin"
+        - "/Users/victorchachereau/anaconda3/bin"
+        - "/opt/local/bin"
+        - "/opt/local/sbin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr"
+        - "/usr/local"
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr/local"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+        - "/sw"
+        - "/opt/local"
+      CMAKE_SYSTEM_LIBRARY_PATH:
+        - "/usr/lib/X11"
+      CMAKE_SYSTEM_FRAMEWORK_PATH:
+        - "~/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Network/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/Library/Frameworks"
+        - "/Library/Frameworks"
+        - "/Network/Library/Frameworks"
+        - "/System/Library/Frameworks"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/local/share/cmake/Modules/FindPkgConfig.cmake:761 (find_library)"
+      - "/usr/local/share/cmake/Modules/FindPkgConfig.cmake:811 (_pkg_find_libs)"
+      - "/usr/local/share/cmake/Modules/FindPkgConfig.cmake:1149 (_pkg_recalculate)"
+      - "/usr/local/share/cmake/Modules/FindPkgConfig.cmake:1166 (_pkg_check_modules_internal)"
+      - "CMakeLists.txt:10 (pkg_check_modules)"
+    mode: "library"
+    variable: "pkgcfg_lib_RTMIDI_rtmidi"
+    description: "Path to a library."
+    settings:
+      SearchFramework: "FIRST"
+      SearchAppBundle: "FIRST"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "rtmidi"
+    candidate_directories:
+      - "/usr/local/Cellar/rtmidi/6.0.0/lib/"
+    found: "/usr/local/Cellar/rtmidi/6.0.0/lib/librtmidi.dylib"
+    search_context:
+      ENV{PATH}:
+        - "/Users/victorchachereau/.platformio/penv/bin"
         - "/usr/local/bin"
         - "/usr/local/opt/coreutils/libexec/gnubin"
         - "/Users/victorchachereau/anaconda3/bin"
