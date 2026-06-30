@@ -1,5 +1,5 @@
 
-## 🎹 Clavier et polyphonie
+## Clavier et polyphonie
 
 - Configuration initiale : **8 touches de piano virtuelles**
 - **8 voix polyphoniques**
@@ -12,7 +12,7 @@ Le moteur audio Faust est **indépendant du nombre de touches affichées**.
 
 ---
 
-## 🎛️ Interaction matérielle (Teensy)
+## Interaction matérielle (Teensy)
 
 ### Boutons initiaux
 - Bouton 1 : preset suivant
@@ -28,7 +28,7 @@ Les boutons sont gérés en **C++**, puis traduits en messages MIDI interprété
 
 ---
 
-## 🖥️ Interface graphique PC
+## Interface graphique PC
 
 - Piano virtuel interactif
 - Animation visuelle lors de l’appui sur une touche
@@ -41,7 +41,7 @@ L’interface peut ainsi évoluer indépendamment du DSP.
 
 ## 🗺️ Feuille de route (Roadmap)
 
-### 🟢 Phase 1 — Validation technique **validé le 5/2 sur VMPK**
+### Phase 1 — Validation technique **validé le 5/2 sur VMPK**
 - [x] Communication MIDI PC → Teensy  
 - [x] Sortie audio via Audio Shield
 - [x] Test de la polyphonie (4 puis 8 voix) en C++
@@ -49,7 +49,7 @@ L’interface peut ainsi évoluer indépendamment du DSP.
 
 ---
 
-### 🟡 Phase 2 — Moteur audio Faust    **fait le 5/2 ** (non testé)
+### Phase 2 — Moteur audio Faust    **fait le 5/2 ** (non testé)
 - [ ] Implémentation du synthétiseur polyphonique (8 voix)
 - [ ] Gestion des notes MIDI
 - [ ] Enveloppes ADSR
@@ -57,7 +57,7 @@ L’interface peut ainsi évoluer indépendamment du DSP.
 
 ---
 
-### 🟠 Phase 3 — Presets et contrôle   **validé le 5/2 (non testé)
+### Phase 3 — Presets et contrôle   **validé le 5/2 (non testé)
 - [ ] Implémentation des 4 presets piano
 - [ ] Mapping Program Change → presets
 - [ ] Mapping Control Change → gain / echo / timbre
@@ -65,7 +65,7 @@ L’interface peut ainsi évoluer indépendamment du DSP.
 
 ---
 
-### 🔵 Phase 4 — Interface graphique
+### Phase 4 — Interface graphique
 - [ ] Piano virtuel à 8 touches
 - [ ] Animations visuelles lors de l’appui
 - [ ] Sélection de presets depuis l’interface
@@ -73,7 +73,7 @@ L’interface peut ainsi évoluer indépendamment du DSP.
 
 ---
 
-### 🟣 Phase 5 — Finalisation
+### Phase 5 — Finalisation
 - [ ] Nettoyage et structuration du code
 - [ ] README final et schémas
 - [ ] Scénario de démonstration (2–3 minutes)
@@ -81,13 +81,13 @@ L’interface peut ainsi évoluer indépendamment du DSP.
 
 ---
 
-## 🎤 Message clé pour la soutenance
+## Message clé pour la soutenance
 
 > Ce projet met en œuvre un synthétiseur polyphonique temps réel exécuté sur une plateforme Teensy, dont le moteur audio est développé en Faust et contrôlé via MIDI, illustrant concrètement les notions de DSP, de contrôle et d’audio embarqué.
 
 ---
 
-## 🚀 Technologies utilisées
+## Technologies utilisées
 - **Teensy**
 - **Faust**
 - **C++**
