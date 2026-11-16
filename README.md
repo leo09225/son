@@ -1,104 +1,97 @@
+# 🎹 Synteensyzer — Synthétiseur polyphonique temps réel sur Teensy 4.0
 
-## Clavier et polyphonie
+> Synthétiseur numérique embarqué : le PC envoie des notes MIDI en USB, un microcontrôleur Teensy 4.0 (ARM Cortex-M7, 600 MHz) calcule le son échantillon par échantillon et le restitue au casque via un codec audio.
 
-- Configuration initiale : **8 touches de piano virtuelles**
-- **8 voix polyphoniques**
-- Gestion correcte des messages `NoteOn` / `NoteOff`
-- Architecture extensible vers :
-  - un plus grand nombre de touches (25 / 49 / 88),
-  - un plus grand nombre de voix.
+Projet de 3ᵉ année, département Télécommunications de l'INSA Lyon (février 2026), réalisé en binôme.
 
-Le moteur audio Faust est **indépendant du nombre de touches affichées**.
-
----
-
-## Interaction matérielle (Teensy)
-
-### Boutons initiaux
-- Bouton 1 : preset suivant
-- Bouton 2 : preset précédent
-
-### Extensions possibles
-- Activation / désactivation de l’echo
-- Sustain
-- Panic (arrêt de toutes les notes)
-- Changement de mode
-
-Les boutons sont gérés en **C++**, puis traduits en messages MIDI interprétés par Faust.
+![C++](https://img.shields.io/badge/C++-17-00599C?logo=cplusplus&logoColor=white)
+![Teensy](https://img.shields.io/badge/Teensy-4.0-orange)
+![PlatformIO](https://img.shields.io/badge/PlatformIO-build-F5822A?logo=platformio&logoColor=white)
+![MIDI](https://img.shields.io/badge/protocole-USB%20MIDI-6f42c1)
+![Python](https://img.shields.io/badge/Python-launcher-3776AB?logo=python&logoColor=white)
 
 ---
 
-## Interface graphique PC
+## Le projet en bref
 
-- Piano virtuel interactif
-- Animation visuelle lors de l’appui sur une touche
-- Communication exclusivement via MIDI (aucun son généré sur le PC)
-- Découplage total entre l’interface et le moteur audio
+| | |
+|---|---|
+| **Objectif** | Concevoir un instrument de musique numérique complet, du clavier jusqu'à la sortie audio, avec une contrainte temps réel stricte. |
+| **Matériel** | Teensy 4.0 + Audio Shield (codec SGTL5000, liaison I2S), bouton physique, PC hôte. |
+| **Logiciel** | Firmware C++ modulaire (~1 200 lignes), outil PC C++ (SDL2 + RtMidi) qui transforme le clavier de l'ordinateur en clavier MIDI, lanceur Python. |
+| **Contrainte clé** | Le moteur audio est appelé par interruption toutes les **2,9 ms** (blocs de 128 échantillons à 44,1 kHz) : au-delà, le son craque. |
 
-L’interface peut ainsi évoluer indépendamment du DSP.
+## Fonctionnalités
 
----
+- 🎼 **Polyphonie 8 voix** avec allocation et libération des voix sur `NoteOn` / `NoteOff`
+- 🎛️ **4 timbres** : sinus (table d'onde), orgue (synthèse additive), piano électrique, pad
+- 📈 **Enveloppe ADSR** indépendante par voix
+- 🔁 **Écho configurable** (délai, mix, feedback) piloté par messages MIDI Control Change
+- ⏺️ **Looper** : enregistrement et lecture en boucle des événements MIDI, contrôlé par un bouton physique (appui court / appui long)
+- 🖥️ **Clavier virtuel sur PC** : le clavier AZERTY devient un clavier de piano qui envoie du MIDI USB à la Teensy
 
-## 🗺️ Feuille de route (Roadmap)
+## Architecture
 
-### Phase 1 — Validation technique **validé le 5/2 sur VMPK**
-- [x] Communication MIDI PC → Teensy  
-- [x] Sortie audio via Audio Shield
-- [x] Test de la polyphonie (4 puis 8 voix) en C++
-- [x] Tests avec clavier MIDI virtuel
+```
+  PC (clavier AZERTY → keyboard_to_midi)
+            │  USB MIDI
+            ▼
+   ┌──────────────────┐        I2S        ┌──────────────────┐
+   │   Teensy 4.0     │ ────────────────▶ │  Audio Shield    │ ──▶ 🎧
+   │  MidiHandler     │                   │  SGTL5000        │
+   │  MyDsp ×2 (live  │                   └──────────────────┘
+   │   + looper)      │
+   │  Looper, Button  │ ◀── bouton physique (debounce, appui long)
+   └──────────────────┘
+```
 
----
+Chaque module a une seule responsabilité :
 
-### Phase 2 — Moteur audio Faust    **fait le 5/2 ** (non testé)
-- [ ] Implémentation du synthétiseur polyphonique (8 voix)
-- [ ] Gestion des notes MIDI
-- [ ] Enveloppes ADSR
-- [ ] Effet d’echo stable (sans saturation)
+| Module | Rôle | Notion mise en œuvre |
+|---|---|---|
+| `MyDsp` | Génère l'audio échantillon par échantillon (oscillateurs, ADSR, mixage, écho) | DSP temps réel, `AudioStream` |
+| `MidiHandler` | Reçoit et route les messages MIDI (notes, Program Change, Control Change) | Protocole MIDI |
+| `Looper` | Enregistre et rejoue les événements MIDI dans une seconde instance du synthé | Machine à états |
+| `Button` | Lit le bouton avec anti-rebond, distingue appui court et appui long | Systèmes embarqués |
+| `config.h` | Constantes partagées (voix, numéros de CC, broches, temporisations) | Source unique de vérité |
+| `main.cpp` | Câble les modules et le graphe audio (deux synthés mixés en stéréo) | Séparation des responsabilités |
 
----
+## Ce que j'ai fait
 
-### Phase 3 — Presets et contrôle   **validé le 5/2 (non testé)
-- [ ] Implémentation des 4 presets piano
-- [ ] Mapping Program Change → presets
-- [ ] Mapping Control Change → gain / echo / timbre
-- [ ] Intégration des boutons physiques
+- Rédaction du cahier des charges et de la feuille de route en 5 phases (validation MIDI, moteur audio, presets, interface, finalisation)
+- Validation de la chaîne **PC → MIDI USB → Teensy → Audio Shield** et des tests de polyphonie (4 puis 8 voix)
+- Moteur audio et presets : synthèse polyphonique, enveloppes, mapping Program Change → presets et Control Change → gain / écho / timbre
+- Documentation du projet et support de soutenance
 
----
+## Lancer le projet
 
-### Phase 4 — Interface graphique
-- [ ] Piano virtuel à 8 touches
-- [ ] Animations visuelles lors de l’appui
-- [ ] Sélection de presets depuis l’interface
-- [ ] Tests de latence et de stabilité
+**Prérequis** : Teensy 4.0 + Audio Shield, [PlatformIO](https://platformio.org/) (ou Arduino IDE + Teensyduino), et sur macOS `brew install sdl2 rtmidi cmake pkg-config` pour l'outil clavier.
 
----
+```bash
+# 1. Flasher le firmware (USB type : MIDI + Serial)
+pio run -e teensy40 -t upload
 
-### Phase 5 — Finalisation
-- [ ] Nettoyage et structuration du code
-- [ ] README final et schémas
-- [ ] Scénario de démonstration (2–3 minutes)
-- [ ] (Optionnel) Boîtier imprimé en 3D
+# 2. Compiler l'outil clavier → MIDI et tout lancer
+python3 launcher_synth.py
+```
 
----
+Une version Arduino IDE du firmware est aussi disponible dans [`arduino_ide/Synteensyzer`](arduino_ide/Synteensyzer).
 
-## Message clé pour la soutenance
+## Organisation du dépôt
 
-> Ce projet met en œuvre un synthétiseur polyphonique temps réel exécuté sur une plateforme Teensy, dont le moteur audio est développé en Faust et contrôlé via MIDI, illustrant concrètement les notions de DSP, de contrôle et d’audio embarqué.
+```
+src/ include/          Firmware Teensy (PlatformIO)
+arduino_ide/           Même firmware, version Arduino IDE
+tools/keyboard_to_midi_cpp/   Outil PC : clavier → MIDI USB (C++, SDL2, RtMidi)
+launcher_synth.py      Compile l'outil, détecte la Teensy et lance le tout
+docs/                  Mapping MIDI, organisation du projet, présentation
+```
 
----
+## Compétences mobilisées
 
-## Technologies utilisées
-- **Teensy**
-- **Faust**
-- **C++**
-- **MIDI**
-- **Audio Shield SGTL5000**
+Programmation embarquée C++ · traitement numérique du signal temps réel · protocole MIDI · architecture logicielle modulaire · machines à états · gestion de projet en binôme (Git)
 
+## Équipe
 
-PolyPiano.dsp
-   ↓ (faust compiler)
-
-Code C++ Teensy (audio + MIDI)
-  
-   ↓ (on compile via Arduino IDE)
-Firmware unique sur Teensy
+- **Léo Le Calvé** — [GitHub](https://github.com/leo09225) · [LinkedIn](https://www.linkedin.com/in/l%C3%A9o-le-calv%C3%A9-b93a1b387/)
+- **Victor Chachereau** — [GitHub](https://github.com/victorchach)

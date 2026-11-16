@@ -1,0 +1,6 @@
+node_modules/
+.pio/
+build/
+.DS_Store
+~$*
+__pycache__/
